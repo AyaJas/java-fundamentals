@@ -55,9 +55,6 @@ public class App {
 
         while (true) {
             LocalDateTime now = LocalDateTime.now();
-            int hour = now.getHour();
-            int minute = now.getMinute();
-            int second = now.getSecond();
             String currentTime = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
             if (!currentTime.equals(time)) {
                 time = currentTime;
@@ -66,7 +63,6 @@ public class App {
             }
 
             count++;
-
         }
     }
 }
