@@ -12,6 +12,12 @@ class LibraryTest {
 
     Library classUnderTest;
     int[] arrayTest = {5, 9, 2, 1, 9};
+    int[][] weeklyMonthTemperatures = {
+            {66, 64, 58, 65, 71, 57, 60},
+            {57, 65, 65, 70, 72, 65, 51},
+            {55, 54, 60, 53, 59, 57, 61},
+            {65, 56, 55, 52, 55, 62, 57}
+    };
 
 
     @BeforeEach
@@ -38,5 +44,16 @@ class LibraryTest {
         double result = classUnderTest.calculatingAverages(arrayTest);
         assertEquals(5.2, result);
     }
+
+//    @BeforeEach
+//    @DisplayName("Array of Array Test")
+//    @Test
+//    void arrayOfArray() {
+//        double[] testResult = Library.arrayOfArray(weeklyMonthTemperatures);
+////        double[] expected = {63.0, 63.57142857142857, 57.0, 57.42857142857143};
+//        double[] expected = {63.0, 63.57142857142857, 57.0, 57.42857142857143};
+////        double[] result = classUnderTest.arrayOfArray(weeklyMonthTemperatures);
+//        assertEquals(expected,testResult);
+//    }
 
 }
