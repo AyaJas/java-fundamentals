@@ -7,17 +7,23 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import java.util.List;
+import java.util.Arrays;
 
 class LibraryTest {
 
     Library classUnderTest;
     int[] arrayTest = {5, 9, 2, 1, 9};
-    int[][] weeklyMonthTemperatures = {
+    Integer[][] weeklyMonthTemperatures = {
             {66, 64, 58, 65, 71, 57, 60},
             {57, 65, 65, 70, 72, 65, 51},
             {55, 54, 60, 53, 59, 57, 61},
             {65, 56, 55, 52, 55, 62, 57}
     };
+    String expected = "\nHigh: "+ 72 +"\nLow: "+ 51 +"\nNever saw temperature: "+ 63 +"\nNever saw temperature: "+ 67 +"\nNever saw temperature: " + 68 +
+            "\nNever saw temperature: "+ 69 +"\n";
+
+    List<String> votes = Arrays.asList("Bush","Bush","Bush","Shrub","Hedge","Shrub","Bush","Hedge","Bush");
 
 
     @BeforeEach
@@ -55,5 +61,21 @@ class LibraryTest {
 ////        double[] result = classUnderTest.arrayOfArray(weeklyMonthTemperatures);
 //        assertEquals(expected,testResult);
 //    }
+
+
+    @Test
+    @DisplayName("Tally Test")
+    void tally() {
+            String result = classUnderTest.tally(votes);
+            assertEquals("Bush", result);
+    }
+
+//    @Test
+//    @DisplayName("analyzingWeatherData Test")
+//    void analyzingWeatherData(){
+//        String result = classUnderTest.analyzingWeatherData(weeklyMonthTemperatures);
+//        assertEquals(expected, result);
+//    }
+
 
 }
