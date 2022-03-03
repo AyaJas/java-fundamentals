@@ -14,7 +14,7 @@ public class App {
         System.out.println("I own " + dogCount + " " + pluralize("dog", dogCount) + ".");
 
         // flipNHeads Test
-        flipNHeads(10);
+        flipNHeads(2);
 
         // colck Test
         clock();
@@ -32,25 +32,25 @@ public class App {
     public static void flipNHeads(int n) {
 
         int flips = 0, countHead = 0;
-        if (n < 0) { System.out.println("Error"); } else
-        {
-            while (flips != n)
+        if (n < 0) { System.out.println("Error"); }
+
+        else {
+            while (countHead != n)
             {
-                flips++;
                 double ranNumber = Math.random();
 //                System.out.println(ranNumber);
                 if (ranNumber > 0.5) {
                     System.out.println("heads");
                     countHead++;
-//                    flips++;
+                    flips++;
                 }
                 if (ranNumber < 0.5) {
                     System.out.println("tails");
-//                    countHead = 0;
-//                    flips++;
+                    countHead = 0;
+                    flips++;
                 }
             }
-            System.out.println("It took " + n + " flips to flip " + countHead + " heads in a row.");
+            System.out.println("It took " + flips + " flips to flip " + countHead + " heads in a row.");
         }
     }
 
