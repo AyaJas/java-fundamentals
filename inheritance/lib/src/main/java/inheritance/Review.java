@@ -7,7 +7,7 @@ public class Review {
     private String reviewText;
     private String author;
     private double numOfStars;
-    private RestaurantReview pointer;
+    private ResShoMovReview pointer;
 
 
     public Review(String reviewText, String author, double numOfStars)
@@ -23,7 +23,7 @@ public class Review {
 
     }
 
-    public Review(String reviewText, String author, double numOfStars, RestaurantReview pointer)
+    public Review(String reviewText, String author, double numOfStars, ResShoMovReview pointer)
     {
 
         if ( numOfStars > 5 || numOfStars < 0 ){
@@ -49,11 +49,11 @@ public class Review {
         return numOfStars;
     }
 
-    public void setPointer(RestaurantReview pointer) {
+    public void setPointer(ResShoMovReview pointer) {
         this.pointer = pointer;
     }
 
-    public RestaurantReview getPointer() {
+    public ResShoMovReview getPointer() {
         return pointer;
     }
 
