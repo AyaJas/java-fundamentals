@@ -32,6 +32,43 @@ public static void Restaurant() {
 
     System.out.println(restaurant1.toString());
 
+    System.out.println("-----------------------------------------");
+
+    Shop shop1 = new Shop("Mango", "Verrrry Good", 50,2.5) {
+        @Override
+        public String reviewTheater() {
+            return null;
+        }
+    };
+
+    System.out.println(shop1.getName());
+    System.out.println(shop1.getStars());
+    System.out.println(shop1.toString());
+
+    Theater movie1 = new Theater("Anne with an E", 3) {
+        @Override
+        public String reviewShop() {
+            return null;
+        }
+    };
+    System.out.println("---------------------------Movie-------------------------------------------");
+
+
+    System.out.println(movie1.getName());
+    movie1.addMovie("Movie1");
+    movie1.addMovie("Movie2");
+    movie1.addMovie("Movie3");
+
+    System.out.println(movie1.getMovie());
+    System.out.println(movie1.getStars());
+    System.out.println(movie1.reviewTheater());
+//    movieString(movie1);
+    System.out.println(movie1.toString());
+
+    movie1.removeMovie("Movie2");
+    System.out.println(movie1.getMovie());
+
+
     }
 
 }
