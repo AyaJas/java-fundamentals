@@ -11,12 +11,14 @@ public class App {
 
     public static void main(String[] args) {
 
-        finalSol();
+        finalSol("C:/Users/ayoos/java-fundamentals/linter/app/src/main/resources/gates.js");
     }
 
-    public static void finalSol()
+    public static String finalSol(String filePath)
     {
-        String filePath = "C:/Users/ayoos/java-fundamentals/linter/app/src/main/resources/gates.js";
+//        String filePath = "C:/Users/ayoos/java-fundamentals/linter/app/src/main/resources/gates.js";
+
+        String result = "";
 
         try
         {
@@ -24,12 +26,12 @@ public class App {
             String lineText = null;
 
             while ((lineText = lineReader.readLine()) != null) {
-                if(!lineText.contains(";")) {
-                    System.out.println("Line "+ lineReader.getLineNumber() + ": " +"Missing semicolon." + "   "+ lineText );
-                    System.out.println();
+                if(!(lineText.contains(";") || lineText.contains("if") || lineText.contains("else") || lineText.endsWith("{") || lineText.endsWith("}") || lineText.length() == 0)){
+                    String aya = "Line "+ lineReader.getLineNumber() + ": " +"Missing semicolon.";
+                    result += aya + "\n";
+
                 }
             }
-
             lineReader.close();
         }
         catch (IOException exception)
@@ -40,8 +42,10 @@ public class App {
         {
             System.out.println("Program executed");
         }
-    }
 
+        return result;
+
+    }
 }
 
 
