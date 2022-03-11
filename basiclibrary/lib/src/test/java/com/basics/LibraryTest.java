@@ -51,17 +51,6 @@ class LibraryTest {
         assertEquals(5.2, result);
     }
 
-//    @BeforeEach
-//    @DisplayName("Array of Array Test")
-//    @Test
-//    void arrayOfArray() {
-//        double[] testResult = Library.arrayOfArray(weeklyMonthTemperatures);
-////        double[] expected = {63.0, 63.57142857142857, 57.0, 57.42857142857143};
-//        double[] expected = {63.0, 63.57142857142857, 57.0, 57.42857142857143};
-////        double[] result = classUnderTest.arrayOfArray(weeklyMonthTemperatures);
-//        assertEquals(expected,testResult);
-//    }
-
 
     @Test
     @DisplayName("Tally Test")

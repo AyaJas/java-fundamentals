@@ -38,7 +38,6 @@ public class Library {
 //        System.out.println("The winner is : " + tally(votes));
 
         analyzingWeatherData(weeklyMonthTemperatures);
-//        System.out.println("Never saw temperature:" + result);
     }
 
     public static void roll(int n) {
