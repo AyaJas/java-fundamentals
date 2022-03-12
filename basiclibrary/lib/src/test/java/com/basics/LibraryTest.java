@@ -21,7 +21,7 @@ class LibraryTest {
             {65, 56, 55, 52, 55, 62, 57}
     };
     String expected = "\nHigh: "+ 72 +"\nLow: "+ 51 +"\nNever saw temperature: "+ 63 +"\nNever saw temperature: "+ 67 +"\nNever saw temperature: " + 68 +
-            "\nNever saw temperature: "+ 69 +"\n";
+            "\nNever saw temperature: "+ 69 + "\n";
 
     List<String> votes = Arrays.asList("Bush","Bush","Bush","Shrub","Hedge","Shrub","Bush","Hedge","Bush");
 
@@ -51,17 +51,6 @@ class LibraryTest {
         assertEquals(5.2, result);
     }
 
-//    @BeforeEach
-//    @DisplayName("Array of Array Test")
-//    @Test
-//    void arrayOfArray() {
-//        double[] testResult = Library.arrayOfArray(weeklyMonthTemperatures);
-////        double[] expected = {63.0, 63.57142857142857, 57.0, 57.42857142857143};
-//        double[] expected = {63.0, 63.57142857142857, 57.0, 57.42857142857143};
-////        double[] result = classUnderTest.arrayOfArray(weeklyMonthTemperatures);
-//        assertEquals(expected,testResult);
-//    }
-
 
     @Test
     @DisplayName("Tally Test")
@@ -70,12 +59,11 @@ class LibraryTest {
             assertEquals("Bush", result);
     }
 
-//    @Test
-//    @DisplayName("analyzingWeatherData Test")
-//    void analyzingWeatherData(){
-//        String result = classUnderTest.analyzingWeatherData(weeklyMonthTemperatures);
-//        assertEquals(expected, result);
-//    }
-
+    @Test
+    @DisplayName("analyzingWeatherData Test")
+    void analyzingWeatherData(){
+        String result = classUnderTest.analyzingWeatherData(weeklyMonthTemperatures);
+        assertEquals(expected, result);
+    }
 
 }

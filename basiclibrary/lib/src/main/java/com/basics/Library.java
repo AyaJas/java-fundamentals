@@ -82,15 +82,9 @@ public class Library {
         return resultArray;
     }
 
-    public static String analyzingWeatherData(Integer[][] arrV)
+    public static String analyzingWeatherData(Integer[][] arr)
     {
         Set<Integer> array = new HashSet<>();
-        Integer[][] arr = {
-                {66, 64, 58, 65, 71, 57, 60},
-                {57, 65, 65, 70, 72, 65, 51},
-                {55, 54, 60, 53, 59, 57, 61},
-                {65, 56, 55, 52, 55, 62, 57}
-        };
 
         int counter =0;
         int max = Integer.MIN_VALUE;
@@ -126,16 +120,13 @@ public class Library {
         }
 //        System.out.println(arr2dSet);
         String strResult = "";
-        for (int i = min; i <= max ; i++)
-        {
-            if (!arr2dSet.contains(i))
-            {
-                strResult = "Never saw temperature: " + i;
-                System.out.println(strResult);
+        for (int i = min; i <= max ; i++) {
+            if (!arr2dSet.contains(i)) {
+                strResult += "Never saw temperature: " + i + "\n";
+                System.out.println(strResult + "\n");
             }
         }
-        return strResult;
-
+        return "\n"+high+"\n"+ low +"\n"+ strResult ;
     }
 
      public static String tally(List<String> votes) {
