@@ -2,20 +2,21 @@ package inheritance;
 
 import java.util.LinkedList;
 
+
 public abstract class Shop implements ResShoMovReview{
 //    name, description, and number of dollar signs
 
-    private String name;
-    private String description;
-    private int numOf$;
-    private double numOfStars = 0.0;
+            private String name;
+            private String description;
+            private String price;
+            private double numOfStars = 0.0;
 
-    private LinkedList<Review> reviewShop = new LinkedList<>();
+            private LinkedList<Review> reviewShop = new LinkedList<>();
 
-    public Shop(String name, String description, int numOf$, double numOfStars) {
-        this.name = name;
-        this.description = description;
-        this.numOf$ = numOf$;
+            public Shop(String name, String description, String price, double numOfStars) {
+                this.name = name;
+                this.description = description;
+                this.price = price;
         this.numOfStars = numOfStars;
     }
 
@@ -23,8 +24,8 @@ public abstract class Shop implements ResShoMovReview{
         return description;
     }
 
-    public int getNumOf$() {
-        return numOf$;
+    public String getPrice() {
+        return price;
     }
 
     public LinkedList<Review> getReviewShop() {
@@ -52,7 +53,7 @@ public abstract class Shop implements ResShoMovReview{
     }
 
 
-    @Override
+
     public void addReview(Review review){
         this.reviewShop.add(review);
         review.setPointer(this);
@@ -83,7 +84,7 @@ public abstract class Shop implements ResShoMovReview{
         return "Shop{" +
                 "name='" + getName() + '\'' +
                 ", description='" + getDescription() + '\'' +
-                ", numOf$=" + getNumOf$() +
+                ", price=" + getPrice() +
                 '}';
     }
 }

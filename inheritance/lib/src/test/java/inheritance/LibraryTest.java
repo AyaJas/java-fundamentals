@@ -3,6 +3,7 @@
  */
 package inheritance;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,28 +14,99 @@ class LibraryTest {
     }
 
 
-    Restaurant restaurant1 = new Restaurant("Vogo", 65.3, 2);
+    Restaurant restaurant1 = new Restaurant("Vogo", "2$", 2);
     Review review1 = new Review("Noraml taste" ,"AYA" ,3);
     Review review2 = new Review("Noraml taste" ,"AYA" ,4);
     Review review3 = new Review("GOOOOD taste" ,"AYA" ,5);
-    Review review4 = new Review("Ver GOOOD taste" ,"AYA" ,1.6);
+    Review review4 = new Review("Very GOOOD taste" ,"AYA" ,1);
 
 
     @Test
-    void resTset()
+    @DisplayName("Restaurant Test")
+    void restaurantTest()
     {
         restaurant1.addReview(review1);
         restaurant1.addReview(review2);
         restaurant1.addReview(review3);
         restaurant1.addReview(review4);
+
+        String expected = restaurant1.toString();
+
+        String result = "Restaurant{name='Vogo', price=2$, numOfStars=2.0, reviewResturant=[Review{reviewText='Noraml taste', author='AYA', numOfStars=3.0}, Review{reviewText='Noraml taste', author='AYA', numOfStars=4.0}, Review{reviewText='GOOOOD taste', author='AYA', numOfStars=5.0}, Review{reviewText='Very GOOOD taste', author='AYA', numOfStars=1.0}]}";
+
+        assertEquals(expected, result);
+
     }
+
+
+
     @Test
-    void resToString(){
-        System.out.println(restaurant1.toString());
+    @DisplayName("Shop Test")
+    void shopTest()
+    {
+        Shop shop1 = new Shop("Mango", "Verrrry Good", "5$", 2.5) {
+            @Override
+            public String reviewTheater() {
+                return null;
+            }
+        };
+
+        String expected = shop1.toString();
+        String result = "Shop{name='Mango', description='Verrrry Good', price=5$}";
+        assertEquals(expected, result);
+
     }
+
+
+
     @Test
-    void revTest(){
-        System.out.println(review1.toString());
+    @DisplayName("Theater without movie name Test")
+    void theaterTest()
+    {
+        Theater movie = new Theater("Anne with an E", 3) {
+            @Override
+            public String reviewTheater() {
+                return null;
+            }
+
+            @Override
+            public String reviewShop() {
+                return null;
+            }
+        };
+
+        movie.addReview(new Review("aya","aya",2.5));
+        String expected= String.valueOf(movie.getReviews());
+        String result = "[Review{reviewText='aya', author='aya', numOfStars=2.5}]";
+        assertEquals(expected, result);
+
     }
+
+
+    @Test
+    @DisplayName("Theater with movie name Test")
+    void theaterNameTest()
+    {
+        Theater movie = new Theater("Anne with an E", 3) {
+            @Override
+            public String reviewTheater() {
+                return null;
+            }
+
+            @Override
+            public String reviewShop() {
+                return null;
+            }
+        };
+
+        movie.addReview(new movieReview("aya","aya",2.5,"aya"));
+        String expected= String.valueOf(movie.getReviews());
+        String result = "[movieReview{reviewText='aya', author=aya', numOfStars=2.5', movie='aya'}]";
+        assertEquals(expected, result);
+
+    }
+
+
+
 
 }
