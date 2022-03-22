@@ -13,10 +13,6 @@ public class Review {
     public Review(String reviewText, String author, double numOfStars)
     {
 
-        if ( numOfStars > 5 || numOfStars < 0 ){
-            System.out.println("Error");
-        }
-
         this.reviewText = reviewText;
         this.author = author;
         this.numOfStars = numOfStars;
@@ -25,10 +21,6 @@ public class Review {
 
     public Review(String reviewText, String author, double numOfStars, ResShoMovReview pointer)
     {
-
-        if ( numOfStars > 5 || numOfStars < 0 ){
-            System.out.println("Error");
-        }
 
         this.reviewText = reviewText;
         this.author = author;
@@ -47,6 +39,15 @@ public class Review {
 
     public double getNumOfStars() {
         return numOfStars;
+    }
+
+    public void setNumOfStars(double numOfStars) {
+        if ( numOfStars > 5 || numOfStars < 0 ){
+            System.out.println("Error");
+        }
+        else {
+            this.numOfStars = numOfStars;
+        }
     }
 
     public void setPointer(ResShoMovReview pointer) {

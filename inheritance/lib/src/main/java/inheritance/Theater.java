@@ -53,26 +53,27 @@ public abstract class Theater implements ResShoMovReview{
         review.setPointer(this);
     }
 
-    @Override
-    public String reviewTheater(){
-        LinkedList<Review> review = getReviews();
 
-        String result = "";
-        for (Review rev: review) {
-            result+=rev.toString();
-        }
-        return result;
-    }
+//    @Override
+//    public String reviewTheater(){
+//        LinkedList<Review> review = getReviews();
+//
+//        String result = "";
+//        for (Review rev: review) {
+//            result+=rev.toString();
+//        }
+//        return result;
+//    }
 
-    public String movieString(LinkedList<String> movieString)
-    {
-        String result = "";
-        for (int i = 0; i < movieString.size(); i++) {
-            result += movieString.get(i);
-        }
-
-        return result;
-    }
+//    public String movieString(LinkedList<String> movieString)
+//    {
+//        String result = "";
+//        for (int i = 0; i < movieString.size(); i++) {
+//            result += movieString.get(i);
+//        }
+//
+//        return result;
+//    }
 
 
     @Override

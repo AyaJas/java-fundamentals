@@ -5,12 +5,12 @@ import java.util.LinkedList;
 public class Restaurant implements ResShoMovReview{
 
     private String name;
-    private double price;
+    private String price;
     private double numOfStars;
 
     private LinkedList<Review> reviewResturant = new LinkedList<>();
 
-    public Restaurant(String name, double price, int numOfStars) {
+    public Restaurant(String name, String price, int numOfStars) {
         this.name = name;
         this.price = price;
         this.numOfStars = numOfStars;
@@ -24,7 +24,7 @@ public class Restaurant implements ResShoMovReview{
         return numOfStars;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
